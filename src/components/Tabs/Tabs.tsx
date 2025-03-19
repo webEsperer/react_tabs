@@ -3,7 +3,7 @@ import { Tab } from '../../types/Tab';
 type Props = {
   tabs: Tab[];
   selectedTabId: string;
-  onTabSelected: (selectedTabId: Tab) => void;
+  onTabSelected: (selectedTabId: string) => void;
 };
 
 export const Tabs = ({ tabs, selectedTabId, onTabSelected }: Props) => {
@@ -23,7 +23,7 @@ export const Tabs = ({ tabs, selectedTabId, onTabSelected }: Props) => {
                 onClick={event => {
                   event.preventDefault();
                   if (selectedTabId !== tab.id) {
-                    onTabSelected(tab);
+                    onTabSelected(tab.id);
                   }
                 }}
               >
